@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3BE7C24-7FA1-45BE-9C3E-34C32BE6AC8F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CreditSales</RootNamespace>
+    <AssemblyName>CreditSales</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tools\RusNumber.cs" />
+    <Compile Include="Data\Repository\BaseRepository.cs" />
+    <Compile Include="Data\Repository\BlackListRepository.cs" />
+    <Compile Include="Data\Repository\CategoryRepository.cs" />
+    <Compile Include="Data\Repository\CreditRepository.cs" />
+    <Compile Include="Data\Repository\MainInfoRepository.cs" />
+    <Compile Include="Data\Repository\PaymentRepository.cs" />
+    <Compile Include="Data\Repository\ProductRepository.cs" />
+    <Compile Include="Data\Repository\ScheduleRepository.cs" />
+    <Compile Include="Data\Repository\SoldProductsRepository.cs" />
+    <Compile Include="Data\Repository\UserRepository.cs" />
+    <Compile Include="Interface\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\AddCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\AddCategoryForm.Designer.cs">
+      <DependentUpon>AddCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\AddProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\AddProductForm.Designer.cs">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\DonePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\DonePayment.Designer.cs">
+      <DependentUpon>DonePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\AddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\AddUserForm.Designer.cs">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\BlackList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\BlackList.Designer.cs">
+      <DependentUpon>BlackList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ClientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\ClientInfo.Designer.cs">
+      <DependentUpon>ClientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\SchedulePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\SchedulePayment.Designer.cs">
+      <DependentUpon>SchedulePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\InfoAboutPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\InfoAboutPayments.Designer.cs">
+      <DependentUpon>InfoAboutPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\MainInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\MainInfo.Designer.cs">
+      <DependentUpon>MainInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\CreditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\CreditForm.Designer.cs">
+      <DependentUpon>CreditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\PaymentGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\PaymentGraph.Designer.cs">
+      <DependentUpon>PaymentGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\UsersForm.Designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\SingleWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\SingleWindow.Designer.cs">
+      <DependentUpon>SingleWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Base.cs" />
+    <Compile Include="Data\Models\BlackList.cs" />
+    <Compile Include="Data\Models\Category.cs" />
+    <Compile Include="Data\Models\Credit.cs" />
+    <Compile Include="Data\Models\MainInfo.cs" />
+    <Compile Include="Data\Models\Payment.cs" />
+    <Compile Include="Data\Models\Product.cs" />
+    <Compile Include="Data\Models\Schedule.cs" />
+    <Compile Include="Data\Models\SoldProduct.cs" />
+    <Compile Include="Data\Models\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\Storage.cs" />
+    <EmbeddedResource Include="Interface\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\AddCategoryForm.resx">
+      <DependentUpon>AddCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\AddProductForm.resx">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\DonePayment.resx">
+      <DependentUpon>DonePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\AddUserForm.resx">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\BlackList.resx">
+      <DependentUpon>BlackList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\ClientInfo.resx">
+      <DependentUpon>ClientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\SchedulePayment.resx">
+      <DependentUpon>SchedulePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\InfoAboutPayments.resx">
+      <DependentUpon>InfoAboutPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\MainInfo.resx">
+      <DependentUpon>MainInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\CreditForm.resx">
+      <DependentUpon>CreditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\PaymentGraph.resx">
+      <DependentUpon>PaymentGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\SingleWindow.resx">
+      <DependentUpon>SingleWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\showAll.png" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\closecredit.png" />
+    <None Include="Resources\reopen.png" />
+    <EmbeddedResource Include="Resources\blackList.png" />
+    <EmbeddedResource Include="Resources\addPayment.png" />
+    <EmbeddedResource Include="Resources\users.png" />
+    <EmbeddedResource Include="Resources\search.png" />
+    <EmbeddedResource Include="Resources\reportPayments.png" />
+    <EmbeddedResource Include="Resources\reportAwaitable.png" />
+    <EmbeddedResource Include="Resources\reportAllCredits.png" />
+    <EmbeddedResource Include="Resources\print.png" />
+    <EmbeddedResource Include="Resources\OK.png" />
+    <EmbeddedResource Include="Resources\new.png" />
+    <EmbeddedResource Include="Resources\mainInfo.png" />
+    <EmbeddedResource Include="Resources\logo.ico" />
+    <EmbeddedResource Include="Resources\license.png" />
+    <EmbeddedResource Include="Resources\infoAboutPayments.png" />
+    <EmbeddedResource Include="Resources\help.png" />
+    <EmbeddedResource Include="Resources\graph.png" />
+    <EmbeddedResource Include="Resources\goods.png" />
+    <EmbeddedResource Include="Resources\export.png" />
+    <EmbeddedResource Include="Resources\exit.png" />
+    <EmbeddedResource Include="Resources\edit.png" />
+    <EmbeddedResource Include="Resources\delete.png" />
+    <EmbeddedResource Include="Resources\close.png" />
+    <EmbeddedResource Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
